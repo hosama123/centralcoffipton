@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Panel de Administración{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-4">👑 Panel de Administración</h1>
+    
+    <!-- Estadísticas -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Productos</h5>
+                    <h2 class="card-text">{{ total_productos }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Pedidos</h5>
+                    <h2 class="card-text">{{ total_pedidos }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <h2 class="card-text">{{ total_usuarios }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">📦 Gestión de Productos</h5>
+                    <p class="card-text">Agrega, edita o elimina productos del catálogo.</p>
+                    <a href="{{ url_for('listar_productos') }}" class="btn btn-primary">Gestionar Productos</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">📋 Ver Todos los Pedidos</h5>
+                    <p class="card-text">Consulta y gestiona todos los pedidos del sistema.</p>
+                    <a href="{{ url_for('listar_pedidos') }}" class="btn btn-success">Ver Pedidos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}<title>Pedidos</title>{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <h2 class="mb-4">📝 Pedidos</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        {% if session.id_rol == 1 %}
+        <th>ID</th><th>Usuario</th><th>Producto</th><th>Cantidad</th><th>Fecha</th>
+        {% else %}
+        <th>ID</th><th>Producto</th><th>Cantidad</th><th>Fecha</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for ped in pedidos %}
+      <tr>
+        {% if session.id_rol == 1 %}
+        <td>{{ ped.id }}</td><td>{{ ped.usuario }}</td><td>{{ ped.producto }}</td><td>{{ ped.cantidad }}</td><td>{{ ped.fecha }}</td>
+        {% else %}
+        <td>{{ ped.id }}</td><td>{{ ped.producto }}</td><td>{{ ped.cantidad }}</td><td>{{ ped.fecha }}</td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody> 
+  </table>
+</div>
+{% endblock %}

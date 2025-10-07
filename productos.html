@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Gestión de Productos{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Gestión de Productos</h1>
+        <a href="{{ url_for('agregar_producto') }}" class="btn btn-primary">➕ Agregar Producto</a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for producto in productos %}
+                        <tr>
+                            <td>{{ producto.id }}</td>
+                            <td>{{ producto.nombre }}</td>
+                            <td>${{ producto.precio }}</td>
+                            <td>{{ producto.stock }}</td>
+                            <td>
+                                <a href="{{ url_for('editar_producto', id=producto.id) }}" 
+                                   class="btn btn-sm btn-outline-primary">Editar</a>
+                                <a href="{{ url_for('eliminar_producto', id=producto.id) }}" 
+                                   class="btn btn-sm btn-outline-danger" 
+                                   onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
