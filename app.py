@@ -9,10 +9,10 @@ app.secret_key = 'clave_secreta_segura'
 # Configuración de la base de datos
 try:
     db = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="ventas",
+        host="bb8lmg848rlzdah1tkd1-mysql.services.clever-cloud.com",
+        user="uurszqwfnysdkfip",
+        password="RhxKt5priED0BOS7L2KO",
+        database="bb8lmg848rlzdah1tkd1",
         port=3306
     )
     cursor = db.cursor(dictionary=True)
