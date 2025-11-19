@@ -1,1 +1,7 @@
 Flask>=3.0.0
+flask
+firebase_admin
+requests
+python-dotenv
+pillow
+mysql-connector-python
