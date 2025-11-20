@@ -30,3 +30,65 @@ h2, h1 {
   background-color: #6f4e37;
   color: white;
 }
+
+/* Estilos adicionales */
+.hero-section {
+  background: linear-gradient(135deg, #6f4e37 0%, #8b6b4d 100%);
+  color: white;
+  padding: 4rem 0;
+  border-radius: 0 0 20px 20px;
+}
+
+.stat-card {
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.badge-cafe {
+  background-color: #6f4e37;
+  color: white;
+}
+
+.btn-cafe {
+  background-color: #6f4e37;
+  border-color: #6f4e37;
+  color: white;
+}
+
+.btn-cafe:hover {
+  background-color: #563c28;
+  border-color: #563c28;
+  color: white;
+}
+
+.alert {
+  border-radius: 8px;
+  border: none;
+}
+
+.modal-header {
+  background-color: #6f4e37;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #6f4e37 !important;
+}

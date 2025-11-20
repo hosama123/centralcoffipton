@@ -3,57 +3,103 @@
 {% block title %}Panel de Administración{% endblock %}
 
 {% block content %}
-<div class="container py-4">
-    <h1 class="mb-4">👑 Panel de Administración</h1>
-    
-    <!-- Estadísticas -->
-    <div class="row mb-4">
-        <div class="col-md-4">
-            <div class="card text-white bg-primary">
-                <div class="card-body">
-                    <h5 class="card-title">Productos</h5>
-                    <h2 class="card-text">{{ total_productos }}</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card text-white bg-success">
-                <div class="card-body">
-                    <h5 class="card-title">Pedidos</h5>
-                    <h2 class="card-text">{{ total_pedidos }}</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card text-white bg-warning">
-                <div class="card-body">
-                    <h5 class="card-title">Usuarios</h5>
-                    <h2 class="card-text">{{ total_usuarios }}</h2>
-                </div>
-            </div>
-        </div>
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 class="display-5 fw-bold">Panel de Administración</h1>
+        <p class="lead mb-4">Gestiona productos, usuarios y pedidos del sistema CentralCofi</p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <i class="bi bi-speedometer2 display-1 opacity-75"></i>
+      </div>
     </div>
-
-    <!-- Botones de acción -->
-    <div class="row">
-        <div class="col-md-6 mb-3">
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">📦 Gestión de Productos</h5>
-                    <p class="card-text">Agrega, edita o elimina productos del catálogo.</p>
-                    <a href="{{ url_for('listar_productos') }}" class="btn btn-primary">Gestionar Productos</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 mb-3">
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">📋 Ver Todos los Pedidos</h5>
-                    <p class="card-text">Consulta y gestiona todos los pedidos del sistema.</p>
-                    <a href="{{ url_for('listar_pedidos') }}" class="btn btn-success">Ver Pedidos</a>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
+
+<div class="container py-5">
+  <!-- Estadísticas -->
+  <div class="row mb-5">
+    <div class="col-md-4 mb-4">
+      <div class="card stat-card text-white bg-cafe border-0">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-box-seam display-4 mb-3"></i>
+          <h3 class="card-title">{{ total_productos }}</h3>
+          <p class="card-text mb-0">Productos Registrados</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card stat-card text-white bg-success border-0">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-cart-check display-4 mb-3"></i>
+          <h3 class="card-title">{{ total_pedidos }}</h3>
+          <p class="card-text mb-0">Pedidos Realizados</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card stat-card text-white bg-warning border-0">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-people display-4 mb-3"></i>
+          <h3 class="card-title">{{ total_usuarios }}</h3>
+          <p class="card-text mb-0">Usuarios Registrados</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Acciones Rápidas -->
+  <div class="row">
+    <div class="col-12 mb-4">
+      <h3 class="fw-bold">Acciones Rápidas</h3>
+    </div>
+    
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card product-card h-100">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-box-seam text-primary display-4 mb-3"></i>
+          <h5 class="card-title fw-bold">Gestión de Productos</h5>
+          <p class="card-text text-muted">Agrega, edita o elimina productos del catálogo.</p>
+          <a href="{{ url_for('listar_productos') }}" class="btn btn-primary w-100">
+            Gestionar Productos
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card product-card h-100">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-people text-success display-4 mb-3"></i>
+          <h5 class="card-title fw-bold">Gestión de Usuarios</h5>
+          <p class="card-text text-muted">Administra los usuarios registrados en el sistema.</p>
+          <a href="{{ url_for('listar_usuarios') }}" class="btn btn-success w-100">
+            Gestionar Usuarios
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card product-card h-100">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-cart-check text-info display-4 mb-3"></i>
+          <h5 class="card-title fw-bold">Ver Pedidos</h5>
+          <p class="card-text text-muted">Consulta y gestiona todos los pedidos del sistema.</p>
+          <a href="{{ url_for('listar_pedidos') }}" class="btn btn-info w-100 text-white">
+            Ver Pedidos
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.bg-cafe {
+  background-color: #6f4e37 !important;
+}
+</style>
 {% endblock %}
